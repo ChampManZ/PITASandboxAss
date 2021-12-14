@@ -6,6 +6,7 @@ TagManager:
   tags:
   - player
   - newplayer
+  - swordtag
   layers:
   - Default
   - TransparentFX
