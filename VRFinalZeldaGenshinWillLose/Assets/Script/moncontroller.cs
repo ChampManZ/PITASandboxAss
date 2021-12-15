@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class moncontroller : MonoBehaviour
 {
-    private int mon_hp = 50;
+    private int mon_hp = 15;
     private int attacking = 0;
     [SerializeField] private Animator monAnim;
     private GameObject myplayer;
@@ -25,7 +25,7 @@ public class moncontroller : MonoBehaviour
         float Dist = Vector3.Distance(myplayer.transform.position, transform.position);
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
 
-        Debug.Log(Dist.ToString());
+        //Debug.Log(Dist.ToString());
         Debug.Log(mon_hp);
         
 
@@ -47,6 +47,7 @@ public class moncontroller : MonoBehaviour
             monAnim.SetInteger("monact", 0);
             attacking = 0;
             atk_timer = 2;
+            //Debug.Log("hunt here");
         }
 
         if(mon_hp <= 0){

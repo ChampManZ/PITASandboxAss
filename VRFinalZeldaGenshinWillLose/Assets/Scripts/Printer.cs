@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Printer : MonoBehaviour
 {
+    public GameObject myplayer;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,12 @@ public class Printer : MonoBehaviour
 
     public void HelloThere()
     {
-        Debug.Log("Hello There!");
+        Debug.Log("hovering There!");
+    }
+    public void Selectingkrub(){
+        myplayer = GameObject.Find("Main Camera");
+        playercontrol pScript = myplayer.GetComponent<playercontrol>();
+        pScript.phase += 1;
+        Debug.Log("select placed");
     }
 }
