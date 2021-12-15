@@ -30,6 +30,28 @@ public class playercontrol : MonoBehaviour
         //XRSocketInteractor socket = mysocket.GetComponent<XRSocketInteractor>();
         //IXRSelectInteractable placed = socket.GetOldestInteractableSelected();
         //Debug.Log(placed.transform.name + " placed..");
+
+        // phase: 0 start, 1 talked1, 2 place1, 3 fight1, 4 endfight1, 5 talked2, 6 place2, 7 fight2, 8 endfight2
+        if (phase == 0){
+            //0 (set text with textmesh pro in canvas)
+        }else if (phase == 1){
+            //1
+        }else if (phase == 2){
+            //2
+        }else if (phase ==3){
+            //3
+        }else if (phase == 4){
+            //4
+        }else if (phase == 5){
+            //5
+        }else if (phase ==6){
+            //6
+        }else if (phase == 7){
+            //7
+        }
+
+
+
         Debug.Log(phase);
 
         //Debug.Log(health);
