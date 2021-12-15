@@ -30,6 +30,7 @@ public class playercontrol : MonoBehaviour
         //XRSocketInteractor socket = mysocket.GetComponent<XRSocketInteractor>();
         //IXRSelectInteractable placed = socket.GetOldestInteractableSelected();
         //Debug.Log(placed.transform.name + " placed..");
+        Debug.Log(phase);
 
         //Debug.Log(health);
         if (health <= 0){
