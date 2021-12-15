@@ -9,6 +9,7 @@ TagManager:
   - swordtag
   - artdia
   - artlong
+  - plat
   layers:
   - Default
   - TransparentFX

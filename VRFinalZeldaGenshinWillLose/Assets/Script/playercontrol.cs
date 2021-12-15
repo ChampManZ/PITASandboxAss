@@ -35,33 +35,33 @@ public class playercontrol : MonoBehaviour
 
         // phase: 0 start, 1 talked1, 2 place1, 3 fight1, 4 endfight1, 5 talked2, 6 place2, 7 fight2, 8 endfight2
         if (phase == 0){
-            objective.text = "Pun the fighter talks to the villagers at the village";
+            objective.text = "Objective: Talks to the villagers at the village";
         }else if (phase == 1){
-            objective.text = "Pun bring the sceptor of icarus to the abandoned horse statue";
+            objective.text = "Objective: Bring the sceptor of icarus to the abandoned horse statue";
         }else if (phase == 2){
-            objective.text = "Pun elimate the monsters";
+            objective.text = "Objective: Elimate the monsters";
         }else if (phase ==3){
            //
         }else if (phase == 4){
-            objective.text = "Pun go back to the villagers";
+            objective.text = "Objective: Go back to the villagers";
         }else if (phase == 5){
-             objective.text = "Pun bring the staff to the Greek statue";
+             objective.text = "Objective: Bring the staff to the Greek statue";
         }else if (phase ==6){
-            objective.text = "Pun elimate the monsters";
+            objective.text = "Objective: Elimate the monsters";
         }else if (phase == 7){
             //
         }else if (phase ==8){
             objective.text = "After all the fights that Pun been through...HE WIN ! ";
         }
 
-        hp.text = health.ToString();
+        hp.text = "Pun the fighter: "+health.ToString() + " hp";
 
         Debug.Log(phase);
         
         //Debug.Log(health);
         if (health <= 0){
             //Debug.Log("lost");
-            hp.text = "0";
+            hp.text = "0 hp";
         }
         if (phase == 2){
             phase += 1;

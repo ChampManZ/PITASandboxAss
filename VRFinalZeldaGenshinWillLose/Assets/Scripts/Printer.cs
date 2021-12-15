@@ -25,6 +25,16 @@ public class Printer : MonoBehaviour
         myplayer = GameObject.Find("Main Camera");
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
         pScript.phase += 1;
+        DestroyWithTag("artdia");
+        DestroyWithTag("artlong");
+        DestroyWithTag("plat");
         Debug.Log("select placed");
+    }
+    void DestroyWithTag (string destroyTag)
+    {
+        GameObject[] destroyObject;
+        destroyObject = GameObject.FindGameObjectsWithTag(destroyTag);
+        foreach (GameObject oneObject in destroyObject)
+            Destroy (oneObject);
     }
 }
