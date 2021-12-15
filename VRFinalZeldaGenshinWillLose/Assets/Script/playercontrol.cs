@@ -6,6 +6,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class playercontrol : MonoBehaviour
 {
     public int health = 30;
+    public TMPro.TextMeshProUGUI objective;
+    public TMPro.TextMeshProUGUI hp;
     public int endphase = 0;
     public int mon_count =0;
     public float spawn_timer = 0;
@@ -33,30 +35,33 @@ public class playercontrol : MonoBehaviour
 
         // phase: 0 start, 1 talked1, 2 place1, 3 fight1, 4 endfight1, 5 talked2, 6 place2, 7 fight2, 8 endfight2
         if (phase == 0){
-            //0 (set text with textmesh pro in canvas)
+            objective.text = "Pun the fighter talks to the villagers at the village";
         }else if (phase == 1){
-            //1
+            objective.text = "Pun bring the sceptor of icarus to the abandoned horse statue";
         }else if (phase == 2){
-            //2
+            objective.text = "Pun elimate the monsters";
         }else if (phase ==3){
-            //3
+           //
         }else if (phase == 4){
-            //4
+            objective.text = "Pun go back to the villagers";
         }else if (phase == 5){
-            //5
+             objective.text = "Pun bring the staff to the Greek statue";
         }else if (phase ==6){
-            //6
+            objective.text = "Pun elimate the monsters";
         }else if (phase == 7){
-            //7
+            //
+        }else if (phase ==8){
+            objective.text = "After all the fights that Pun been through...HE WIN ! ";
         }
 
-
+        hp.text = health.ToString();
 
         Debug.Log(phase);
-
+        
         //Debug.Log(health);
         if (health <= 0){
             //Debug.Log("lost");
+            hp.text = "0";
         }
         if (phase == 2){
             phase += 1;
