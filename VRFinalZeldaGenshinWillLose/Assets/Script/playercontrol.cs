@@ -35,11 +35,11 @@ public class playercontrol : MonoBehaviour
 
         // phase: 0 start, 1 talked1, 2 place1, 3 fight1, 4 endfight1, 5 talked2, 6 place2, 7 fight2, 8 endfight2
         if (phase == 0){
-            objective.text = "Objective: Talks to the villagers at the village";
+            objective.text = "Objective: Talk to the villager at the village";
         }else if (phase == 1){
             objective.text = "Objective: Bring the sceptor of icarus to the abandoned horse statue";
         }else if (phase == 2){
-            objective.text = "Objective: Elimate the monsters";
+            objective.text = "Objective: Eliminiate the minions";
         }else if (phase ==3){
            //
         }else if (phase == 4){
@@ -47,7 +47,7 @@ public class playercontrol : MonoBehaviour
         }else if (phase == 5){
              objective.text = "Objective: Bring the staff to the Greek statue";
         }else if (phase ==6){
-            objective.text = "Objective: Elimate the monsters";
+            objective.text = "Objective: Eliminate the minions";
         }else if (phase == 7){
             //
         }else if (phase ==8){
