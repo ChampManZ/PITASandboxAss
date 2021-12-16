@@ -10,6 +10,7 @@ TagManager:
   - artdia
   - artlong
   - plat
+  - allforce
   layers:
   - Default
   - TransparentFX
