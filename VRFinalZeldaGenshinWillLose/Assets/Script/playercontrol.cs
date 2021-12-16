@@ -56,7 +56,7 @@ public class playercontrol : MonoBehaviour
 
         hp.text = "Pun the fighter: "+health.ToString() + " hp";
 
-        Debug.Log(phase);
+        //Debug.Log(phase);
         
         //Debug.Log(health);
         if (health <= 0){

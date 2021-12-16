@@ -25,11 +25,11 @@ public class moncontroller : MonoBehaviour
         float Dist = Vector3.Distance(myplayer.transform.position, transform.position);
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
 
-        //Debug.Log(Dist.ToString());
-        Debug.Log(mon_hp);
+        Debug.Log( "Dist: " + Dist.ToString());
+        //Debug.Log(mon_hp);
         
 
-        if (Dist <= 2){
+        if (Dist <= 3){
             monAnim.SetInteger("monact", 1);
             if (attacking == 0){
                 attacking = 1;
@@ -48,6 +48,7 @@ public class moncontroller : MonoBehaviour
             attacking = 0;
             atk_timer = 2;
             //Debug.Log("hunt here");
+
         }
 
         if(mon_hp <= 0){
