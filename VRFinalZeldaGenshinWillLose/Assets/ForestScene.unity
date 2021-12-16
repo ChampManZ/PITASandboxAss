@@ -15932,6 +15932,7 @@ MonoBehaviour:
   mon_left: 0
   fence_one: 0
   fence_two: 0
+  mon_prefab: {fileID: 391043287256699813, guid: 3f4d4e90d5104c6489171b5d0d37e54c, type: 3}
 --- !u!1 &1057261716
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ public class moncontroller : MonoBehaviour
             attacking = 0;
             atk_timer = 2;
             //Debug.Log("hunt here");
+            
 
         }
 

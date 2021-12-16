@@ -15,6 +15,7 @@ public class playercontrol : MonoBehaviour
     public int mon_left = 0;
     public int fence_one = 0;
     public int fence_two = 0;
+    public GameObject mon_prefab;
     //public GameObject mysocket;
     // Start is called before the first frame update
     void Start()
@@ -84,6 +85,13 @@ public class playercontrol : MonoBehaviour
             mon_left -= 1;
             spawn_timer = UnityEngine.Random.Range(2,5);
             //Debug.Log("spawn here");
+            if (phase == 2){
+                // spawn horse statue area Instanitiate(mon_prefab);
+
+            }else if (phase == 6){
+                // spawn greek statue area
+
+            }
 
 
         }
