@@ -40,13 +40,13 @@ public class playercontrol : MonoBehaviour
         if (phase == 0){
             objective.text = "Objective: Talk to the villager at the village";
         }else if (phase == 1){
-            objective.text = "Objective: Bring the sceptor of icarus to the abandoned horse statue";
+            objective.text = "Objective: Bring the scepter of Icarus to the abandoned horse statue";
         }else if (phase == 2){
             objective.text = "Objective: Eliminiate the minions";
         }else if (phase ==3){
            //
         }else if (phase == 4){
-            objective.text = "Objective: Go back to the villagers";
+            objective.text = "Objective: Go back to champ";
         }else if (phase == 5){
              objective.text = "Objective: Bring the staff to the Greek statue";
         }else if (phase ==6){
@@ -54,10 +54,20 @@ public class playercontrol : MonoBehaviour
         }else if (phase == 7){
             //
         }else if (phase ==8){
-            objective.text = "After all the fights that Pun been through...HE WIN ! ";
+            //objective.text = "After all the fights that Pun been through...HE WIN ! ";
+            objective.text = "Objective: Get back to champ";
+        }else if(phase == 9){
+            //objective.text = "Objective: Find the magical removal stone in the deep forest and bring back to the champ";
+            objective.text = "Objective: Find the magical removal stone in the deep forest and bring back to champ";
+        }else if(phase == 10){
+            //objective.text = "Objective: Take the gem to the rock of freedom and go home";
+            objective.text = "Objective: Take the gem to ignite the rock of freedom and go home";
+        }else if(phase == 11){
+            //send home
         }
 
-        hp.text = "Pun the fighter: "+health.ToString() + " hp";
+
+        hp.text = "Pun The Fighter: "+health.ToString() + " HP";
 
         //Debug.Log(phase);
         
@@ -115,6 +125,8 @@ public class playercontrol : MonoBehaviour
                 fence_one = 2;
             }
         }
+
+
         
     }
 }

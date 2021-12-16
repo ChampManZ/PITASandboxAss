@@ -46,7 +46,7 @@ public class villagercontroller : MonoBehaviour
 
         }
         if(vil_state == 2){
-            // spawn scepter
+            // spawn scepter*
             Instantiate(staff,new Vector3(287f,26.5f,365.5f), this.transform.rotation);
             Instantiate(platform,new Vector3(308.7039f,23.5f,86f), this.transform.rotation);
             vil_state =3;
@@ -67,6 +67,12 @@ public class villagercontroller : MonoBehaviour
         if (vil_state == 1 && audioact == 0){
             audioact = 1;
         }
+        if (vil_state == 8 && audioact == 0){
+            audioact = 1;
+        }
+        if (vil_state == 12 && audioact == 0){
+            audioact = 1;
+        }
 
 
         if (talk_timer <= 0 && vil_state == 5){
@@ -76,7 +82,7 @@ public class villagercontroller : MonoBehaviour
 
         }
         if(vil_state == 6){
-            // spawn staff
+            // spawn staff *
             
             Instantiate(scepter,new Vector3(286.9505f,27f,365.7851f), this.transform.rotation);
             Instantiate(platform,new Vector3(123.6641f,23f,354.7492f), this.transform.rotation);
@@ -85,7 +91,74 @@ public class villagercontroller : MonoBehaviour
 
         }
 
+        if (Dist < 3 && pScript.phase == 8){
+            talk_timer = 10;
+            vil_state = 8;
+
+        }
+
+        if (talk_timer <= 0 && vil_state == 8){
+            talk_timer = 0;
+            vil_state = 9;
+            audioact = 0;
+
+        }
+
+        if(vil_state == 9){
+            // spawn removal stone
+            vil_state = 10;
+            pScript.phase += 1;
+        }
+
+        if(vil_state == 11){
+            talk_timer = 10;
+            vil_state = 12;
+
+        }
+        if (talk_timer <= 0 && vil_state == 12){
+            talk_timer = 0;
+            vil_state = 13;
+            audioact = 0;
+
+        }
+
+        if(vil_state == 13){
+            // spawn ignite gem
+            vil_state = 14;
+            pScript.phase += 1;
+        }
+        if (vil_state == 14){
+            // walk to rock of freedom and stand still
+            // set act glad to run to still
+
+        }
+
+
+        
+
+
+
 
         
     }
+
+    //collide function and if vil_state == 10 to vil_state 11 and destroy removal tag*
+    private void OnCollisionEnter(Collision collision){
+        if(collision.gameObject.tag == "removal" && vil_state == 10){
+            DestroyWithTag("removal");
+            vil_state = 11;
+
+        }
+        
+        
+    }
+    void DestroyWithTag (string destroyTag)
+    {
+        GameObject[] destroyObject;
+        destroyObject = GameObject.FindGameObjectsWithTag(destroyTag);
+        foreach (GameObject oneObject in destroyObject)
+            Destroy (oneObject);
+    }
+
+
 }

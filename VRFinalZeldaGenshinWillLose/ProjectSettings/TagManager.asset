@@ -11,6 +11,8 @@ TagManager:
   - artlong
   - plat
   - allforce
+  - removal
+  - ignite
   layers:
   - Default
   - TransparentFX
