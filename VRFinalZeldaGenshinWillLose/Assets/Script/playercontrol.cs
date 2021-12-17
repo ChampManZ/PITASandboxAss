@@ -74,7 +74,7 @@ public class playercontrol : MonoBehaviour
         //Debug.Log(health);
         if (health <= 0){
             //Debug.Log("lost");
-            hp.text = "0 hp";
+            hp.text = "Pun The Fighter: DEAD";
         }
         if (phase == 2){
             phase += 1;
