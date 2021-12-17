@@ -19,6 +19,7 @@ public class moncontroller : MonoBehaviour
     {
         myplayer = GameObject.Find("Main Camera");
         mytarget = GameObject.Find("target");
+        Debug.Log("i spawned");
         //transform.position = new Vector3(transform.position.x,transform.position.y-5f,transform.position.z);
         
 

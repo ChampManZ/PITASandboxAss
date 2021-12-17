@@ -22,7 +22,7 @@ public class magmacontroller : MonoBehaviour
         float Dist = Vector3.Distance(myplayer.transform.position, transform.position);
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
 
-        Debug.Log(transform.position.y);
+        //Debug.Log(transform.position.y);
 
         if (Dist <= 0.5){
             pScript.health -= 10;
