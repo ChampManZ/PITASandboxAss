@@ -47,6 +47,7 @@ public class villagercontroller : MonoBehaviour
 
         }
         if(vil_state == 2){
+            pScript.health = 30;
             // spawn scepter*
             Instantiate(staff,new Vector3(287f,26.2f,365.5f), this.transform.rotation);
             Instantiate(platform,new Vector3(308.7039f,23.5f,86f), this.transform.rotation);
@@ -84,6 +85,7 @@ public class villagercontroller : MonoBehaviour
         }
         if(vil_state == 6){
             // spawn staff *
+            pScript.health = 30;
             
             Instantiate(scepter,new Vector3(286.9505f,26.2f,365.7851f), this.transform.rotation);
             Instantiate(platform,new Vector3(123.6641f,23f,354.7492f), this.transform.rotation);
@@ -106,7 +108,7 @@ public class villagercontroller : MonoBehaviour
         }
 
         if(vil_state == 9){
-            // spawn removal stone
+            // spawn fake removal stone and three plat
             vil_state = 10;
             pScript.phase += 1;
         }
@@ -124,6 +126,7 @@ public class villagercontroller : MonoBehaviour
         }
 
         if(vil_state == 13){
+            pScript.health = 30;
             // spawn ignite gem
             Instantiate(ignite,new Vector3(286.8602f,26.2f,365.7915f), this.transform.rotation);
             vil_state = 14;

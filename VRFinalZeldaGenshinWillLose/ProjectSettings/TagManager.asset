@@ -13,6 +13,8 @@ TagManager:
   - allforce
   - removal
   - ignite
+  - correct
+  - wrong
   layers:
   - Default
   - TransparentFX

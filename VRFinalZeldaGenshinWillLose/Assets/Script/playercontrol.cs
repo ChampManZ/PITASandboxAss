@@ -19,6 +19,10 @@ public class playercontrol : MonoBehaviour
     float[] xm1 = new float[8]{258.03332f,339.921f, 349.547f, 268.0177f, 268.1826f, 310.5743f, 343.926f, 312.0763f};
     float[] ym1 = new float[8]{26.9236f, 22.20671f, 25.06455f, 23.16452f, 23.99924f, 23.74437f, 21.5595f, 25.07163f};
     float[] zm1 = new float[8]{103.4496f, 110.0378f, 50.87915f, 52.61578f, 76.84064f, 108.9281f, 81.35338f, 50.7186f};
+
+    float[] xm2 = new float[8]{105.4921f,110.0998f, 146.1141f, 147.8705f, 99.68793f, 147.5969f, 134.4773f, 131.2655f};
+    float[] ym2 = new float[8]{21.63748f, 22.02439f, 22.85515f, 21.77286f, 21.55353f, 21.74171f, 23.01277f, 20.99999f};
+    float[] zm2 = new float[8]{322.645f, 367.619f, 368.5869f, 323.6629f, 328.331f, 332.5993f, 375.6923f, 315.0266f};
     //public GameObject mysocket;
     // Start is called before the first frame update
     void Start()
@@ -107,16 +111,20 @@ public class playercontrol : MonoBehaviour
         }
         if(mon_left > 0 && spawn_timer <= 0){
             mon_left -= 1;
-            spawn_timer = UnityEngine.Random.Range(2,5);
+            
             //Debug.Log("spawn here");
             Debug.Log("sp");
             if (phase == 3){
                 Debug.Log("sp2");
                 // spawn horse statue area Instanitiate(mon_prefab);
+                spawn_timer = UnityEngine.Random.Range(2,5);
                 int placement = UnityEngine.Random.Range(0,7);
                 Instantiate(mon_prefab, new Vector3(xm1[placement], ym1[placement], zm1[placement]), this.transform.rotation);
 
             }else if (phase == 7){
+                spawn_timer = UnityEngine.Random.Range(1,4);
+                int placement = UnityEngine.Random.Range(0,7);
+                Instantiate(mon_prefab, new Vector3(xm2[placement], ym2[placement], zm2[placement]), this.transform.rotation);
                 // spawn greek statue area
 
             }
@@ -127,6 +135,7 @@ public class playercontrol : MonoBehaviour
 
         if(mon_count == 10){
             endphase = 1;
+            health = 30;
             mon_count = 0;
         }
 
