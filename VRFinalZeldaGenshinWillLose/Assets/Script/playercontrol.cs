@@ -54,11 +54,13 @@ public class playercontrol : MonoBehaviour
 
         // phase: 0 start, 1 talked1, 2 place1, 3 fight1, 4 endfight1, 5 talked2, 6 place2, 7 fight2, 8 endfight2
         if(fire_timer > 0 && havefire ==0){
+            Debug.Log("fire starter");
             fire_timer-= Time.deltaTime;
-        }else if(fire_timer <= 0 && havefire == 0){
-            fire_timer =0;
+        }else if(fire_timer < 0 && havefire == 0){
+            //fire_timer =0;
             havefire = 1;
             //instant fire
+            Debug.Log("fire come");
             Instantiate(firemon,new Vector3(449.1854f,22.5f,232f), this.transform.rotation);
         }
         if (phase == 0){

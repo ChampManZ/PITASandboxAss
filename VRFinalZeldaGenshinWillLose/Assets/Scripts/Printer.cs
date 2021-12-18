@@ -51,6 +51,7 @@ public class Printer : MonoBehaviour
     }
 
     public void Selectingcorrect(){
+        Debug.Log("hey corr");
         myplayer = GameObject.Find("Main Camera");
         remover = GameObject.Find("MoonStone02");
         playercontrol pScript = myplayer.GetComponent<playercontrol>();

@@ -102,7 +102,7 @@ public class villagercontroller : MonoBehaviour
 
         }
 
-        if (Dist < 3 && pScript.phase == 8){
+        if (Dist < 3 && pScript.phase == 8 && vil_state == 7 ){
             talk_timer = 10;
             vil_state = 8;
 
