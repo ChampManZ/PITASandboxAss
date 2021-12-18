@@ -117,7 +117,7 @@ public class villagercontroller : MonoBehaviour
             Instantiate(wrong1,new Vector3(451.5409f,21.5f,242f), this.transform.rotation);
             Instantiate(wrong2,new Vector3(449.0959f,21.5f,242f), this.transform.rotation);
             Instantiate(correct,new Vector3(446.5f,21.5f,365.242f), this.transform.rotation);
-            //Instantiate(fake,new Vector3(123.6641f,23f,354.7492f), this.transform.rotation);
+            Instantiate(fake,new Vector3(456.3251f,21f,250.0303f), this.transform.rotation);
 
             vil_state = 10;
             pScript.phase += 1;
