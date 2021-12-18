@@ -55,6 +55,8 @@ public class Printer : MonoBehaviour
         pScript.health = 30;
         //destroy self, wrong plat tag, spawn real removal stone and fire monster timer
         DestroyWithTag("correct");
+        DestroyWithTag("wrong2");
+        DestroyWithTag("wrong");
         DestroyWithTag("fake");
 
 
