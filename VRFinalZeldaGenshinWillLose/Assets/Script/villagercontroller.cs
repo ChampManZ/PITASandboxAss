@@ -33,6 +33,8 @@ public class villagercontroller : MonoBehaviour
     {
         float Dist = Vector3.Distance(myplayer.transform.position, transform.position);
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
+        Debug.Log("vil_state: " + vil_state.ToString());
+        Debug.Log("talk_timer " + talk_timer.ToString());
 
         if (Dist < 3 && vil_state == 0){
             talk_timer = 10;
@@ -115,6 +117,7 @@ public class villagercontroller : MonoBehaviour
 
         if(vil_state == 9){
             // spawn fake removal stone and three plat
+            Debug.Log("puzzle spawned");
             Instantiate(wrong1,new Vector3(451.5409f,21.5f,242f), this.transform.rotation);
             Instantiate(wrong2,new Vector3(449.0959f,21.5f,242f), this.transform.rotation);
             Instantiate(correct,new Vector3(446.5f,21.5f,365.242f), this.transform.rotation);
