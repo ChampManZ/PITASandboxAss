@@ -25,12 +25,18 @@ public class villagercontroller : MonoBehaviour
     void Start()
     {
         myplayer = GameObject.Find("Main Camera");
+        me = 0;
         
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(me == 0){
+            me = 1;
+            // 
+
+        }
         float Dist = Vector3.Distance(myplayer.transform.position, transform.position);
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
         Debug.Log("vil_state: " + vil_state.ToString());
@@ -118,10 +124,10 @@ public class villagercontroller : MonoBehaviour
         if(vil_state == 9){
             // spawn fake removal stone and three plat
             Debug.Log("puzzle spawned");
-            Instantiate(wrong1,new Vector3(451.5409f,21.5f,242f), this.transform.rotation);
-            Instantiate(wrong2,new Vector3(449.0959f,21.5f,242f), this.transform.rotation);
-            Instantiate(correct,new Vector3(446.5f,21.5f,365.242f), this.transform.rotation);
-            Instantiate(fake,new Vector3(456.3251f,21f,250.0303f), this.transform.rotation);
+            Instantiate(wrong1,new Vector3(451.5409f,21.5f,242f),Quaternion.identity);
+            Instantiate(wrong2,new Vector3(449.0959f,21.5f,242f), Quaternion.identity);
+            Instantiate(correct,new Vector3(446.5f,21.5f,242f), Quaternion.identity);
+            Instantiate(fake,new Vector3(456.3251f,21f,250.0303f), Quaternion.identity);
 
             vil_state = 10;
             pScript.phase += 1;
