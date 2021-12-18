@@ -53,6 +53,7 @@ public class Printer : MonoBehaviour
         myplayer = GameObject.Find("Main Camera");
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
         pScript.health = 30;
+        pScript.fire_timer = 3;
         //destroy self, wrong plat tag, spawn real removal stone and fire monster timer
         DestroyWithTag("correct");
         DestroyWithTag("wrong2");

@@ -10,10 +10,15 @@ public class villagercontroller : MonoBehaviour
     private int vil_state = 0;
     private int audioact = 0;
     [SerializeField] private Animator vilAnim;
+    [SerializeField] private int me;
     public GameObject scepter;
     public GameObject staff;
     public GameObject platform;
     public GameObject ignite;
+    public GameObject fake;
+    public GameObject wrong1;
+    public GameObject wrong2;
+    public GameObject correct;
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +114,11 @@ public class villagercontroller : MonoBehaviour
 
         if(vil_state == 9){
             // spawn fake removal stone and three plat
+            Instantiate(wrong1,new Vector3(451.5409f,21.5f,242f), this.transform.rotation);
+            Instantiate(wrong2,new Vector3(449.0959f,21.5f,242f), this.transform.rotation);
+            Instantiate(correct,new Vector3(446.5f,21.5f,365.242f), this.transform.rotation);
+            //Instantiate(fake,new Vector3(123.6641f,23f,354.7492f), this.transform.rotation);
+
             vil_state = 10;
             pScript.phase += 1;
         }

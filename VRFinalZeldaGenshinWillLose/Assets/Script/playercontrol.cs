@@ -15,7 +15,10 @@ public class playercontrol : MonoBehaviour
     public int mon_left = 0;
     public int fence_one = 0;
     public int fence_two = 0;
+    public GameObject firemon;
     public GameObject mon_prefab;
+    public float fire_timer = 0;
+    public int havefire =0;
     float[] xm1 = new float[8]{258.03332f,339.921f, 349.547f, 268.0177f, 268.1826f, 310.5743f, 343.926f, 312.0763f};
     float[] ym1 = new float[8]{26.9236f, 22.20671f, 25.06455f, 23.16452f, 23.99924f, 23.74437f, 21.5595f, 25.07163f};
     float[] zm1 = new float[8]{103.4496f, 110.0378f, 50.87915f, 52.61578f, 76.84064f, 108.9281f, 81.35338f, 50.7186f};
@@ -50,6 +53,13 @@ public class playercontrol : MonoBehaviour
         //Debug.Log(placed.transform.name + " placed..");
 
         // phase: 0 start, 1 talked1, 2 place1, 3 fight1, 4 endfight1, 5 talked2, 6 place2, 7 fight2, 8 endfight2
+        if(fire_timer > 0 && havefire ==0){
+            fire_timer-= Time.deltaTime;
+        }else if(fire_timer <= 0 && havefire == 0){
+            fire_timer =0;
+            havefire = 1;
+            //instant fire
+        }
         if (phase == 0){
             objective.text = "Objective: Talk to the villager at the village";
             // to vi
