@@ -19,6 +19,7 @@ public class villagercontroller : MonoBehaviour
     public GameObject wrong1;
     public GameObject wrong2;
     public GameObject correct;
+    [SerializeField] private float speed = 7;
 
     // Start is called before the first frame update
     void Start()
@@ -144,8 +145,23 @@ public class villagercontroller : MonoBehaviour
         }
         if (vil_state == 14){
             // walk to rock of freedom and stand still
-            // set act glad to run to still
+            // set act to run to still
+            if(System.Math.Round(transform.position.x) != 293 && System.Math.Round(transform.position.y) != 22 && System.Math.Round(transform.position.z) != 354){
+                // act walk
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(293f,22f,354f), Time.deltaTime * speed);
+                vilAnim.SetInteger("istalk", 2);
+            }else{
+                vil_state = 15;
+                vilAnim.SetInteger("istalk", 3);
+                vilAnim.SetInteger("istalk", 0);
 
+                //act idle
+
+            }
+
+        }
+        if(vil_state == 15){
+            //end
         }
 
 

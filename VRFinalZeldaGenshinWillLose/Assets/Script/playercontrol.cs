@@ -59,6 +59,7 @@ public class playercontrol : MonoBehaviour
             fire_timer =0;
             havefire = 1;
             //instant fire
+            Instantiate(firemon,new Vector3(449.1854f,22.5f,232f), this.transform.rotation);
         }
         if (phase == 0){
             objective.text = "Objective: Talk to the villager at the village";

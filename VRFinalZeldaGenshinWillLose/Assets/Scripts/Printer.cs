@@ -5,6 +5,7 @@ using UnityEngine;
 public class Printer : MonoBehaviour
 {
     public GameObject myplayer;
+    public GameObject remover;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +52,7 @@ public class Printer : MonoBehaviour
 
     public void Selectingcorrect(){
         myplayer = GameObject.Find("Main Camera");
+        remover = GameObject.Find("MoonStone02");
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
         pScript.health = 30;
         pScript.fire_timer = 3;
@@ -59,6 +61,7 @@ public class Printer : MonoBehaviour
         DestroyWithTag("wrong2");
         DestroyWithTag("wrong");
         DestroyWithTag("fake");
+        remover.transform.position = new Vector3(446.9305f, 21.9f, 241.2132f);
 
 
 
