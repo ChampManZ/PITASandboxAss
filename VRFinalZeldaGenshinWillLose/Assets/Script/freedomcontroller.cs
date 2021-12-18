@@ -19,6 +19,8 @@ public class freedomcontroller : MonoBehaviour
         if(free_state == 1){
             //send home
             pScript.phase += 1;
+            free_state = 2;
+            Destroy(gameObject);
         }
         
     }
@@ -29,6 +31,7 @@ public class freedomcontroller : MonoBehaviour
             DestroyWithTag("ignite");
             DestroyWithTag("allforce");
             free_state = 1;
+            
 
         }
         
