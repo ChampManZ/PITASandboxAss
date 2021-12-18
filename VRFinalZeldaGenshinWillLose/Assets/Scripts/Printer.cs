@@ -32,10 +32,19 @@ public class Printer : MonoBehaviour
         Debug.Log("select placed");
     }
 
-    public void Selectingwrong(){
+    public void Selectingwrong1(){
         myplayer = GameObject.Find("Main Camera");
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        DestroyWithTag("wrong");
+        pScript.health -= 15;
+        Debug.Log("select wrong placed");
+    }
+    public void Selectingwrong2(){
+        myplayer = GameObject.Find("Main Camera");
+        playercontrol pScript = myplayer.GetComponent<playercontrol>();
+        //Destroy(gameObject);
+        DestroyWithTag("wrong2");
         pScript.health -= 15;
         Debug.Log("select wrong placed");
     }
@@ -44,8 +53,11 @@ public class Printer : MonoBehaviour
         myplayer = GameObject.Find("Main Camera");
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
         pScript.health = 30;
-        //destroy self, wrong plat tag, spawn real removal stone and fire monster
-        
+        //destroy self, wrong plat tag, spawn real removal stone and fire monster timer
+        DestroyWithTag("correct");
+        DestroyWithTag("fake");
+
+
 
         //pScript.phase += 1;
         //DestroyWithTag("plat");
