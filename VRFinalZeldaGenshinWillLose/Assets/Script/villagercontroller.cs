@@ -124,26 +124,26 @@ public class villagercontroller : MonoBehaviour
             pScript.phase += 1;
         }
 
-        if(vil_state == 10){
+        if(vil_state == 11){
             talk_timer = 10;
             vil_state = 12;
 
         }
-        if (talk_timer <= 0 && vil_state == 11){
+        if (talk_timer <= 0 && vil_state == 12){
             talk_timer = 0;
-            vil_state = 12;
+            vil_state = 13;
             audioact = 0;
 
         }
 
-        if(vil_state == 14){
+        if(vil_state == 13){
             pScript.health = 30;
             // spawn ignite gem
             Instantiate(ignite,new Vector3(286.8602f,26.2f,365.7915f), this.transform.rotation);
-            vil_state = 15;
+            vil_state = 14;
             pScript.phase += 1;
         }
-        if (vil_state == 15){
+        if (vil_state == 14){
             // walk to rock of freedom and stand still
             // set act to run to still
             if(System.Math.Round(transform.position.x) != 293 && System.Math.Round(transform.position.y) != 22 && System.Math.Round(transform.position.z) != 354){
@@ -151,7 +151,7 @@ public class villagercontroller : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(293f,22f,354f), Time.deltaTime * speed);
                 vilAnim.SetInteger("istalk", 2);
             }else{
-                vil_state = 16;
+                vil_state = 15;
                 vilAnim.SetInteger("istalk", 3);
                 vilAnim.SetInteger("istalk", 0);
 
@@ -160,7 +160,7 @@ public class villagercontroller : MonoBehaviour
             }
 
         }
-        if(vil_state == 16){
+        if(vil_state == 15){
             //end
         }
 
