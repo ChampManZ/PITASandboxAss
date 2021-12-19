@@ -87,7 +87,7 @@ public class playercontrol : MonoBehaviour
             objective.text = "Objective: Get back to champ";
         }else if(phase == 9){
             //objective.text = "Objective: Find the magical removal stone in the deep forest and bring back to the champ";
-            objective.text = "Objective: Find the magical removal stone in the deep forest and bring back to champ";
+            objective.text = "Objective: Find the altared removal stone and bring back to champ";
         }else if(phase == 10){
             //objective.text = "Objective: Take the gem to the rock of freedom and go home";
             objective.text = "Objective: Take the gem to ignite the rock of freedom and go home";
