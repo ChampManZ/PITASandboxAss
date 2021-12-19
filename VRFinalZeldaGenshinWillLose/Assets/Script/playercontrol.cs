@@ -26,6 +26,7 @@ public class playercontrol : MonoBehaviour
     float[] xm2 = new float[8]{105.4921f,110.0998f, 146.1141f, 147.8705f, 99.68793f, 147.5969f, 134.4773f, 131.2655f};
     float[] ym2 = new float[8]{21.63748f, 22.02439f, 22.85515f, 21.77286f, 21.55353f, 21.74171f, 23.01277f, 20.99999f};
     float[] zm2 = new float[8]{322.645f, 367.619f, 368.5869f, 323.6629f, 328.331f, 332.5993f, 375.6923f, 315.0266f};
+    public int diffme = 0;
     //public GameObject mysocket;
     // Start is called before the first frame update
     void Start()
@@ -148,7 +149,10 @@ public class playercontrol : MonoBehaviour
 
         if(mon_count == 10){
             endphase = 1;
-            health = 30;
+            if (diffme == 0){
+                health = 30;
+            }
+            
             mon_count = 0;
         }
 
@@ -156,7 +160,9 @@ public class playercontrol : MonoBehaviour
 
 
         if (endphase == 1){
-            health = 30;
+            if (diffme == 0){
+                health = 30;
+            }
             phase += 1;
             endphase = 0;
             if (fence_one == 2){
