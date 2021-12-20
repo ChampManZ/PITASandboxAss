@@ -123,6 +123,7 @@ public class playercontrol : MonoBehaviour
 
         Debug.Log("phase: " + phase.ToString());
         Debug.Log("mon_count: " + mon_count.ToString());
+        Debug.Log("mon_left: " + mon_left.ToString());
         
         //Debug.Log(health);
         if (health <= 0){
@@ -177,7 +178,7 @@ public class playercontrol : MonoBehaviour
         }
 
 
-        if(mon_count == 10){
+        if(mon_count >= 10){
             endphase = 1;
             if (diffme == 0){
                 health = 30;

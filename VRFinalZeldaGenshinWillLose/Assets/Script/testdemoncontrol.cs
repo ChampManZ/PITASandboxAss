@@ -14,6 +14,7 @@ public class testdemoncontrol : MonoBehaviour
     private float atk_timer = 2;
     private int die = 0;
     public string ishit = "nothit";
+    private int dead = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -72,8 +73,10 @@ public class testdemoncontrol : MonoBehaviour
             die =1;
             monAnim.SetInteger("monact", 2);
         }
-        if (die_timer <= 0){
+        if (die_timer <= 0 && dead == 0){
+            dead =1;
             pScript.mon_count += 1;
+            Debug.Log("mon dead --> left: " + pScript.mon_left.ToString()  +" count: "+ pScript.mon_count.ToString());
             Destroy(gameObject);
 
         }
