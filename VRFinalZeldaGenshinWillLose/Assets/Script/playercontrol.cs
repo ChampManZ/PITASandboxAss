@@ -114,10 +114,15 @@ public class playercontrol : MonoBehaviour
             Instantiate(ender,new Vector3(294f,23.8f,351f), Quaternion.identity);
         }
 
+        if(phase == -2){
+            respawner -= Time.deltaTime;
+        }
+
 
         
 
         Debug.Log("phase: " + phase.ToString());
+        Debug.Log("mon_count: " + mon_count.ToString());
         
         //Debug.Log(health);
         if (health <= 0){
