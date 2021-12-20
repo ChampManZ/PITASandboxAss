@@ -6,6 +6,8 @@ public class hitme : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public GameObject mainself;
+    public AudioSource audioSource;
+    public AudioClip gethit;
 
     void Start()
     {
@@ -24,6 +26,8 @@ public class hitme : MonoBehaviour
         wolfcontroller mScript = mainself.GetComponent<wolfcontroller>();
         if(collision.gameObject.tag == "swordtag"){
            // mon_hp -= 1;
+           audioSource.Stop();
+           audioSource.PlayOneShot(gethit);
 
             mScript.ishit = "hit";
         }

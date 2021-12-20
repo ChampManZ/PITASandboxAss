@@ -31,6 +31,8 @@ public class playercontrol : MonoBehaviour
 
     public float respawner = 5;
     public float winner = 5;
+    public GameObject ender;
+    public int haveend = 0;
 
     public string newplayer;
     //public GameObject mysocket;
@@ -100,11 +102,16 @@ public class playercontrol : MonoBehaviour
             objective.text = "Objective: Take the gem to ignite the rock of freedom and go home";
         }else if(phase == 11){
             //send home
-            objective.text = "Game Created: Naphat, Thanapat, Nunnapat, Lucksamon";
+            objective.text = "Objective: All done...";
+            haveend = 1;
         }
 
         if(respawner <= 0){
             SceneManager.LoadScene("ForestScene");
+        }
+        if(haveend == 1){
+            haveend = 2;
+            Instantiate(ender,new Vector3(294f,23.8f,351f), Quaternion.identity);
         }
 
 

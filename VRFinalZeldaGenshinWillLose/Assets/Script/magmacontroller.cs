@@ -26,10 +26,12 @@ public class magmacontroller : MonoBehaviour
 
         if(my_state == 2){
             my_state = -2;
+            audioSource.Stop();
             audioSource.PlayOneShot(going);
         }
         if(my_state == 4){
             my_state = -4;
+            audioSource.Stop();
             audioSource.PlayOneShot(going);
         }
 

@@ -5,6 +5,8 @@ using UnityEngine;
 public class hitdemon : MonoBehaviour
 {
     [SerializeField] public GameObject mainself;
+    public AudioSource audioSource;
+    public AudioClip gethit;
 
     void Start()
     {
@@ -23,6 +25,8 @@ public class hitdemon : MonoBehaviour
         testdemoncontrol mScript = mainself.GetComponent<testdemoncontrol>();
         if(collision.gameObject.tag == "swordtag"){
            // mon_hp -= 1;
+           audioSource.Stop();
+           audioSource.PlayOneShot(gethit);
 
             mScript.ishit = "hit";
         }
