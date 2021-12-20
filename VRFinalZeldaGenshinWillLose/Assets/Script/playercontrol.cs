@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.SceneManagement;
 
 public class playercontrol : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class playercontrol : MonoBehaviour
     float[] ym2 = new float[8]{21.63748f, 22.02439f, 22.85515f, 21.77286f, 21.55353f, 21.74171f, 23.01277f, 20.99999f};
     float[] zm2 = new float[8]{322.645f, 367.619f, 368.5869f, 323.6629f, 328.331f, 332.5993f, 375.6923f, 315.0266f};
     public int diffme = 0;
+
+    public float respawner = 5;
+    public float winner = 5;
+
+    public string newplayer;
     //public GameObject mysocket;
     // Start is called before the first frame update
     void Start()
@@ -94,17 +100,29 @@ public class playercontrol : MonoBehaviour
             objective.text = "Objective: Take the gem to ignite the rock of freedom and go home";
         }else if(phase == 11){
             //send home
+            objective.text = "Game Created: Naphat, Thanapat, Nunnapat, Lucksamon";
+        }
+
+        if(respawner <= 0){
+            SceneManager.LoadScene("ForestScene");
         }
 
 
-        hp.text = "Pun The Fighter: "+health.ToString() + " HP";
+        
 
         Debug.Log("phase: " + phase.ToString());
         
         //Debug.Log(health);
         if (health <= 0){
             //Debug.Log("lost");
-            hp.text = "Pun The Fighter: DEAD";
+            phase = -2;
+            hp.text = "*Game Over : Respawning in " +  System.Math.Round(respawner).ToString() + "s...";
+
+        }else if(phase == 11){
+            hp.text = "*King YALF'QUESTS COMPLETED !!!";
+        }
+        else{
+            hp.text = "Pun The Fighter: "+health.ToString() + " HP";
         }
         if (phase == 2){
 

@@ -6,6 +6,8 @@ public class magmacontroller : MonoBehaviour
 {
     private GameObject myplayer;
     private int my_state = 0;
+    public AudioSource audioSource;
+    public AudioClip going;
     
 
     // Start is called before the first frame update
@@ -21,6 +23,15 @@ public class magmacontroller : MonoBehaviour
     {
         float Dist = Vector3.Distance(myplayer.transform.position, transform.position);
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
+
+        if(my_state == 2){
+            my_state = -2;
+            audioSource.PlayOneShot(going);
+        }
+        if(my_state == 4){
+            my_state = -4;
+            audioSource.PlayOneShot(going);
+        }
 
         //Debug.Log(transform.position.y);
 

@@ -7,6 +7,8 @@ public class magtwocontroller : MonoBehaviour
     // Start is called before the first frame update
     private GameObject myplayer;
     private int my_state = 0;
+    public AudioSource audioSource;
+    public AudioClip going;
     void Start()
     {
         myplayer = GameObject.Find("Main Camera");
@@ -20,6 +22,14 @@ public class magtwocontroller : MonoBehaviour
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
 
         //Debug.Log(transform.position.y);
+        if(my_state == 2){
+            my_state = -2;
+            audioSource.PlayOneShot(going);
+        }
+        if(my_state == 4){
+            my_state = -4;
+            audioSource.PlayOneShot(going);
+        }
 
         if (Dist <= 0.5){
             pScript.health -= 10;
