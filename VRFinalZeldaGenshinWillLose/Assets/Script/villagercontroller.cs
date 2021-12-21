@@ -20,6 +20,15 @@ public class villagercontroller : MonoBehaviour
     public GameObject wrong2;
     public GameObject correct;
     [SerializeField] private float speed = 7;
+    [SerializeField] float timer1 = 0;
+    [SerializeField] float timer2 = 0;
+    [SerializeField] float timer3 = 0;
+    [SerializeField] float timer4 = 0;
+    [SerializeField] TMPro.TextMeshProUGUI villager_dialouge;
+    [SerializeField] bool first_meet_check;
+    [SerializeField] bool second_meet_check;
+    [SerializeField] bool third_meet_check;
+    [SerializeField] bool last_meet_check;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +41,8 @@ public class villagercontroller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(me == 0){
+
+        if (me == 0){
             me = 1;
             // 
 
@@ -42,15 +52,136 @@ public class villagercontroller : MonoBehaviour
         Debug.Log("vil_state: " + vil_state.ToString());
         Debug.Log("talk_timer " + talk_timer.ToString());
 
+        // First meet
         if (Dist < 3 && vil_state == 0){
-            talk_timer = 10;
+            talk_timer = 18;
             vil_state = 1;
-
         }
+
         if (talk_timer > 0 ){
             vilAnim.SetInteger("istalk", 1);
-            talk_timer -= Time.deltaTime;
-        }else if (talk_timer <= 0){
+
+            if (vil_state == 1)
+            {
+                talk_timer -= Time.deltaTime;
+                timer1 += Time.deltaTime;
+
+                if (timer1 > 0)
+                {
+                    villager_dialouge.text = "Hey! Are you Pun The Fighter who king yalf send to help us?";
+                }
+
+                if (timer1 > 4)
+                {
+                    villager_dialouge.text = "I am Champ. The villagers are too scared to get outside of their houses.";
+                }
+
+                if (timer1 > 7)
+                {
+                    villager_dialouge.text = "Bring this scepter of Icarus to the abandoned horse statue and eliminate the minions then come back to me.";
+                }
+
+                if (timer1 > 12)
+                {
+                    villager_dialouge.text = "Oh! and be careful when they fight they like to trap their prey with dark forces. Good luck!";
+                }
+
+                if (timer1 > 16)
+                {
+                    villager_dialouge.text = "";
+                    timer1 = 17;
+                }
+            }
+
+            if (vil_state == 5)
+            {
+                timer2 += Time.deltaTime;
+
+                if (timer2 > 1)
+                {
+                    villager_dialouge.text = "Great you survived!";
+                }
+
+                if (timer2 > 4)
+                {
+                    villager_dialouge.text = "Here take this staff to the greek statue and do the same thing as before.";
+                }
+
+                if (timer2 > 7)
+                {
+                    villager_dialouge.text = "See you soon my friend!";
+                }
+
+                if (timer2 > 10)
+                {
+                    villager_dialouge.text = "";
+                    timer2 = 11;
+                }
+            }
+
+            if (vil_state == 8)
+            {
+                timer3 += Time.deltaTime;
+
+                if (timer3 > 1)
+                {
+                    villager_dialouge.text = "Well done, Pun!";
+                }
+
+                if (timer3 > 4)
+                {
+                    villager_dialouge.text = "Lastly, find the removal stone in the forest then cleanse at the altar there and then bring it back to me.";
+                }
+
+                if (timer3 > 7)
+                {
+                    villager_dialouge.text = "I will craft the removal gem to destroy dark forces and send you home.";
+                }
+
+                if (timer3 > 10)
+                {
+                    villager_dialouge.text = "Oh, I forgot to tell you that be aware of the fire guardian you can’t defeat him with your sword and he is super fast.";
+                }
+
+                if (timer3 > 15)
+                {
+                    villager_dialouge.text = "He will die after he tired.";
+                }
+
+                if (timer3 > 18)
+                {
+                    villager_dialouge.text = "";
+                    timer3 = 19;
+                }
+            }
+
+            if (vil_state == 12)
+            {
+                timer4 += Time.deltaTime;
+
+                if (timer4 > 1)
+                {
+                    villager_dialouge.text = "Finally!!! We are free!";
+                }
+
+                if (timer4 > 4)
+                {
+                    villager_dialouge.text = "Thank you so much! Villagers will love this.";
+                }
+
+                if (timer4 > 7)
+                {
+                    villager_dialouge.text = "Take this gem to ignite the rock of freedom there then you can go home now.";
+                }
+
+                if (timer4 > 10)
+                {
+                    timer4 = 11;
+                    villager_dialouge.text = "";
+                }
+            }
+        }
+        else if (talk_timer <= 0){
             vilAnim.SetInteger("istalk", 0);
             talk_timer = 0;
         }
@@ -74,8 +205,10 @@ public class villagercontroller : MonoBehaviour
         if (pScript.phase == 4 && vil_state == 3){
             vil_state =4;
         }
+
+        // Second meet
         if (Dist < 3 && vil_state == 4){
-            talk_timer = 10;
+            talk_timer = 11;
             vil_state = 5;
         }
 
@@ -112,10 +245,10 @@ public class villagercontroller : MonoBehaviour
 
         }
 
+        // Third meet
         if (Dist < 3 && pScript.phase == 8 && vil_state == 7 ){
-            talk_timer = 10;
+            talk_timer = 20;
             vil_state = 8;
-
         }
 
         if (talk_timer <= 0 && vil_state == 8){
@@ -138,9 +271,8 @@ public class villagercontroller : MonoBehaviour
         }
 
         if(vil_state == 11){
-            talk_timer = 10;
+            talk_timer = 12;
             vil_state = 12;
-
         }
         if (talk_timer <= 0 && vil_state == 12){
             talk_timer = 0;
@@ -191,10 +323,10 @@ public class villagercontroller : MonoBehaviour
 
     //collide function and if vil_state == 10 to vil_state 11 and destroy removal tag*
     private void OnCollisionEnter(Collision collision){
+        // Last meet
         if(collision.gameObject.tag == "removal" && vil_state == 10){
             DestroyWithTag("removal");
             vil_state = 11;
-
         }
         
         
