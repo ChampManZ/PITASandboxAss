@@ -19454,7 +19454,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -20367,7 +20367,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &877249973
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21070,7 +21070,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &919725337
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22081,7 +22081,7 @@ MonoBehaviour:
   diffme: 0
   respawner: 5
   winner: 5
-  ender: {fileID: 0}
+  ender: {fileID: 3299428114568096373, guid: a22e1dc74f3c31c4cac94b5d5fc94261, type: 3}
   haveend: 0
   newplayer: 
   player_character: {fileID: 1204720382}
@@ -25893,8 +25893,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -29523,7 +29523,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -30476,6 +30476,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1550754114}
   going: {fileID: 8300000, guid: 17bea5249e6684373a3a437f5ebf3e96, type: 3}
+  playgoing1: 0
+  playgoing2: 0
+  onet: 0
+  onett: 0
 --- !u!82 &1550754114
 AudioSource:
   m_ObjectHideFlags: 0
@@ -33876,6 +33880,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1867289949}
   going: {fileID: 8300000, guid: 17bea5249e6684373a3a437f5ebf3e96, type: 3}
+  playgoing1: 0
+  playgoing2: 0
+  onet: 0
+  onett: 0
 --- !u!4 &1867289948
 Transform:
   m_ObjectHideFlags: 0

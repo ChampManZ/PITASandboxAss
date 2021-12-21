@@ -9,6 +9,10 @@ public class magtwocontroller : MonoBehaviour
     private int my_state = 0;
     public AudioSource audioSource;
     public AudioClip going;
+    public int playgoing1 = 0;
+    public int playgoing2 = 0;
+    public int onet = 0;
+    public int onett = 0;
     void Start()
     {
         myplayer = GameObject.Find("Main Camera");
@@ -21,16 +25,31 @@ public class magtwocontroller : MonoBehaviour
         float Dist = Vector3.Distance(myplayer.transform.position, transform.position);
         playercontrol pScript = myplayer.GetComponent<playercontrol>();
 
+        if (playgoing1 == 1 && onet == 0){
+            //playgoing = 0;
+            onet = 1;
+            audioSource.Stop();
+            audioSource.PlayOneShot(going);
+
+        }
+        if (playgoing2 == 1 && onett == 0){
+            //playgoing = 0;
+            onett = 1;
+            audioSource.Stop();
+            audioSource.PlayOneShot(going);
+
+        }
+
         //Debug.Log(transform.position.y);
         if(my_state == 2){
             my_state = -2;
-            audioSource.Stop();
-            audioSource.PlayOneShot(going);
+            playgoing1 = 1;
+            
         }
         if(my_state == 4){
             my_state = -4;
-            audioSource.Stop();
-            audioSource.PlayOneShot(going);
+            playgoing2 = 1;
+            
         }
 
         if (Dist <= 0.5){
