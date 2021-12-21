@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6699590841079815830}
   - component: {fileID: 4999690413034448948}
   - component: {fileID: 3003125945863264726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MoonStone02
   m_TagString: removal
   m_Icon: {fileID: 0}

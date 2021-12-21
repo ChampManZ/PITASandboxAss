@@ -7,7 +7,7 @@ public class villagercontroller : MonoBehaviour
 
     public GameObject myplayer;
     private float talk_timer;
-    private int vil_state = 0;
+    [SerializeField] private int vil_state = 0;
     private int audioact = 0;
     [SerializeField] private Animator vilAnim;
     [SerializeField] private int me;
@@ -29,6 +29,7 @@ public class villagercontroller : MonoBehaviour
     [SerializeField] bool second_meet_check;
     [SerializeField] bool third_meet_check;
     [SerializeField] bool last_meet_check;
+    public int reach = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -96,6 +97,7 @@ public class villagercontroller : MonoBehaviour
             if (vil_state == 5)
             {
                 timer2 += Time.deltaTime;
+                talk_timer -= Time.deltaTime;
 
                 if (timer2 > 1)
                 {
@@ -122,6 +124,7 @@ public class villagercontroller : MonoBehaviour
             if (vil_state == 8)
             {
                 timer3 += Time.deltaTime;
+                talk_timer -= Time.deltaTime;
 
                 if (timer3 > 1)
                 {
@@ -140,7 +143,7 @@ public class villagercontroller : MonoBehaviour
 
                 if (timer3 > 10)
                 {
-                    villager_dialouge.text = "Oh, I forgot to tell you that be aware of the fire guardian you can’t defeat him with your sword and he is super fast.";
+                    villager_dialouge.text = "Oh, I forgot to tell you that be aware of the fire guardian you canï¿½t defeat him with your sword and he is super fast.";
                 }
 
                 if (timer3 > 15)
@@ -158,6 +161,7 @@ public class villagercontroller : MonoBehaviour
             if (vil_state == 12)
             {
                 timer4 += Time.deltaTime;
+                talk_timer -= Time.deltaTime;
 
                 if (timer4 > 1)
                 {
@@ -294,22 +298,52 @@ public class villagercontroller : MonoBehaviour
         if (vil_state == 14){
             // walk to rock of freedom and stand still
             // set act to run to still
-            if(System.Math.Round(transform.position.x) != 293 && System.Math.Round(transform.position.y) != 22 && System.Math.Round(transform.position.z) != 354){
-                // act walk
-                transform.position = Vector3.MoveTowards(transform.position, new Vector3(293f,22f,354f), Time.deltaTime * speed);
-                vilAnim.SetInteger("istalk", 2);
-            }else{
-                vil_state = 15;
-                vilAnim.SetInteger("istalk", 3);
-                vilAnim.SetInteger("istalk", 0);
 
-                //act idle
+            // if(System.Math.Round(transform.position.x) == 295 && System.Math.Round(transform.position.y) == 24 && System.Math.Round(transform.position.z) == 354){
 
-            }
+            //     transform.position = new Vector3(295f,24f,354f);
+
+            //     vilAnim.SetInteger("istalk", 2);
+            //     vilAnim.SetInteger("istalk", 0);
+            //     vil_state = 15;
+                
+            //     // act walk
+                
+            // }else{
+            //     vilAnim.SetInteger("istalk", 3);
+            //     transform.LookAt(new Vector3(295f,22f,354f));
+            //     transform.position = Vector3.MoveTowards(transform.position, new Vector3(295f,24f,354f), Time.deltaTime * speed);
+                
+                
+
+            //     //act idle
+
+            // }
+
+            vilAnim.SetInteger("istalk", 2);
+            vil_state = 15;
+
+            // Debug.Log("trans X " + transform.position.x.ToString());
+            // if(transform.position.x != 294.5f){
+            //     Debug.Log("trans x com");
+            //     transform.position = new Vector3(transform.position.x+1, transform.position.y, transform.position.z);
+            //     vilAnim.SetInteger("istalk", 2);
+            // }
+            // else{
+            //     Debug.Log("trans x com2");
+            //     vil_state = 15;
+            //     vilAnim.SetInteger("istalk", 3);
+            //     vilAnim.SetInteger("istalk", 0);
+            // }
 
         }
-        if(vil_state == 15){
+        if(vil_state == 15 && reach == 0){
             //end
+            Debug.Log("vil_state: 151");
+            reach = 1;
+            // transform.position = new Vector3(295f,24f,354f);
+            // transform.Rotate(0,250,0);
+            //vilAnim.SetInteger("istalk", 0);
         }
 
 
