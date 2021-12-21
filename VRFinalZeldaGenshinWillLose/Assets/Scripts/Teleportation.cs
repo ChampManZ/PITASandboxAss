@@ -93,4 +93,14 @@ public class Teleportation : MonoBehaviour
     {
         btnTextChange = !btnTextChange;
     }
+
+    public void debugger()
+    {
+        xr_rig_player.transform.position = xr_rig_player.transform.position + new Vector3(145, 5, 130);
+    }
+
+    public void debugger2()
+    {
+        xr_rig_player.transform.position = xr_rig_player.transform.position + new Vector3(25, 10, -272);
+    }
 }

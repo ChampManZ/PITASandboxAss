@@ -35,6 +35,9 @@ public class playercontrol : MonoBehaviour
     public int haveend = 0;
 
     public string newplayer;
+
+    [SerializeField] GameObject player_character;
+
     //public GameObject mysocket;
     // Start is called before the first frame update
     void Start()
@@ -203,7 +206,20 @@ public class playercontrol : MonoBehaviour
             }
         }
 
-
+        StartCoroutine(calcSpeed(player_character));
         
+    }
+
+    IEnumerator calcSpeed(GameObject player)
+    {
+        Vector3 prevPos = player.transform.position;
+        yield return new WaitForSeconds(1f);
+        Vector3 finalPos = player.transform.position;
+
+        if (prevPos.x != finalPos.x || prevPos.z != finalPos.z)
+        {
+            // Play sounds
+            Debug.Log("Moving");
+        }
     }
 }
